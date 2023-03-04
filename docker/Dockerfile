@@ -29,5 +29,6 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 
 SHELL ["/bin/bash", "-c"]
 RUN echo "source activate NTFields" >> ~/.bashrc && \
-    export LIBGL_ALWAYS_INDIRECT=0 && \
     source /root/.bashrc
+
+ENTRYPOINT ["conda", "run", "-n", "NTFields", "python"]
