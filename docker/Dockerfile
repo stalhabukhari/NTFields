@@ -31,4 +31,5 @@ SHELL ["/bin/bash", "-c"]
 RUN echo "source activate NTFields" >> ~/.bashrc && \
     source /root/.bashrc
 
+WORKDIR /code-wkdir
 ENTRYPOINT ["conda", "run", "-n", "NTFields", "python"]
