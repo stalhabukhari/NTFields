@@ -47,6 +47,8 @@ def to_off(path):
             centers = (bb_max+bb_min)/2.0
             v = v-centers
             v = v/(bb_max-bb_min)
+        else:
+            raise Exception(f"Unknown data type: {data_type} (allowed: c3d, arm, box, bunny)")
             
         igl.write_triangle_mesh(output_file, v, f) 
 

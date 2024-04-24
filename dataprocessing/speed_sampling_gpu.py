@@ -341,7 +341,15 @@ def sample_speed(path, numsamples, dim):
             offset = margin/7.0 
         elif task_name=='arm':
             margin = limit/10.0
-            offset = margin/15.0 
+            offset = margin/15.0
+        elif task_name == 'box':
+            margin = limit / 5.0
+            offset = margin / 10.0
+        elif task_name == 'bunny':
+            margin = limit / 5.0
+            offset = margin / 10.0
+        else:
+            raise Exception(f"Unknown task name: {task_name}")
         
         v, f = igl.read_triangle_mesh(input_file)
 
