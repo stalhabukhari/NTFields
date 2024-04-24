@@ -105,6 +105,23 @@ To train our model in the 4DOF arm environment, run:
 python train/train_arm.py 
 ```
 
+## Docker
+
+Build the docker image `ntf-image` by running:
+
+```sh
+cd docker && bash build-image.sh
+```
+
+Run the docker container as follows (let we define `docker run --gpus all -v /path/to/NTFields-repo:/code-wkdir ntf-image` as `docker-ntf` for brevity):
+
+```sh
+# preprocessing
+docker-ntf dataprocessing/preprocess.py --config configs/gibson.txt
+# training
+docker-ntf train/train_gib.py
+```
+
 ## Citation
 
 Please cite our paper if you find it useful in your research:
